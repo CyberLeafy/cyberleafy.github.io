@@ -24,138 +24,10 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'typing': 'typing 4s steps(14) infinite, blink .75s step-end infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        typing: {
-                            '0%, 100%': { width: '0ch' },
-                            '50%, 90%': { width: '10.2ch' },
-                        },
-                        blink: {
-                            '50%': { borderColor: 'transparent' }
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                },
-            },
-            plugins: [
-                function ({ addUtilities }) {
-                    addUtilities({
-                        '.zoom-hover': {
-                            transition: 'transform 300ms ease',
-                        },
-                        '.zoom-hover:hover': {
-                            transform: 'scale(1.07)',
-                        },
-                    })
-                },
-            ],
-        }
-    </script>
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+    <link rel="stylesheet" href="style.css">
+    <script src="./tailwind.js"></script>
 
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
 
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
-
-        /* Utilities */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            /* backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); */
-        }
-
-        .dark .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-        }
-
-        /* Reveal Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Staggered delays for children */
-        .stagger-1 {
-            transition-delay: 100ms;
-        }
-
-        .stagger-2 {
-            transition-delay: 200ms;
-        }
-
-        .stagger-3 {
-            transition-delay: 300ms;
-        }
-
-        .name-heading-font {
-            font-family: "Dancing Script", cursive;
-            font-optical-sizing: auto;
-            font-weight: 700;
-            font-style: normal;
-        }
-    </style>
     <script type="importmap">
 {
     "imports": {
@@ -376,6 +248,8 @@
         <section id="about" class="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto reveal">
             <div class="bg-white/50 dark:bg-slate-800/30 rounded-3xl backdrop-blur-sm p-8 md:p-12">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                    <!-- Left Content -->
                     <div class="space-y-6">
                         <div
                             class="inline-block p-3 rounded-2xl bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-2">
@@ -385,20 +259,57 @@
                                 <polyline points="8 6 2 12 8 18"></polyline>
                             </svg>
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">About Me</h2>
+
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+                            👋 About Me
+                        </h2>
+
                         <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                            I'm a passionate web developer with a keen eye for design and a strong foundation in
-                            engineering principles.
-                            I specialize in building scalable single-page applications and performant static websites.
+                            I’m a full-stack developer with a strong backend focus, experienced in building
+                            production-ready
+                            web applications, REST APIs, and role-based systems.
                         </p>
+
                         <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                            Whether I'm writing clean React code, optimizing backend logic, or designing intuitive user
-                            interfaces,
-                            my goal is always to create digital products that feel effortless to use.
+                            While I work comfortably across both frontend and backend, my primary interest lies in
+                            backend
+                            architecture, scalability, and system design. I enjoy building systems that are clean,
+                            reliable,
+                            and designed to scale.
+                        </p>
+
+                        <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+                            I follow a backend-first approach using Flask, FastAPI, and Django, and I also have
+                            experience
+                            building APIs and real-time features with Node.js and Express. This is complemented by
+                            modern
+                            frontend development with React and Tailwind CSS.
+
                         </p>
                     </div>
 
+                    <!-- Right Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                        <!-- Backend Card -->
+                        <div
+                            class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 transition-colors zoom-hover">
+                            <svg class="w-7 h-7 text-purple-500 mb-3" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            </svg>
+                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">
+                                Backend Engineering
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">
+                                Designing scalable APIs, authentication flows, and role-based systems using Flask,
+                                FastAPI,
+                                Django, as well as Node.js and Express, backed by modern databases.
+                            </p>
+                        </div>
+
+                        <!-- Frontend Card -->
                         <div
                             class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 transition-colors zoom-hover">
                             <svg class="w-7 h-7 text-blue-500 mb-3" viewBox="0 0 24 24" fill="none"
@@ -409,23 +320,16 @@
                                     d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
                                 </path>
                             </svg>
-                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">Frontend</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Responsive UIs with React, Tailwind,
-                                and modern CSS.</p>
+                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">
+                                Frontend Integration
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">
+                                Building responsive, accessible interfaces with React, Tailwind CSS, and modern UI
+                                patterns.
+                            </p>
                         </div>
-                        <div
-                            class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 transition-colors zoom-hover">
-                            <svg class="w-7 h-7 text-purple-500 mb-3" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">Backend</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Scalable APIs with Node.js, Express,
-                                and databases.</p>
-                        </div>
+
+                        <!-- System Design Card -->
                         <div
                             class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 transition-colors sm:col-span-2 zoom-hover">
                             <svg class="w-7 h-7 text-primary-500 mb-3" viewBox="0 0 24 24" fill="none"
@@ -433,56 +337,48 @@
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
                             </svg>
-                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">Clean Code</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">I write maintainable, self-documenting
-                                code with a focus on type safety and testing.</p>
+                            <h3 class="font-bold text-lg mb-2 text-slate-800 dark:text-slate-200">
+                                System Design & Scalability
+                            </h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">
+                                I focus on clean architecture, maintainable codebases, and systems that scale
+                                efficiently
+                                under real-world usage.
+                            </p>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
+
+        <!-- Skills Section -->
         <!-- Skills Section -->
         <section id="skills" class="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto reveal">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Technical Skills</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Tech Stack</h2>
                 <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                    A toolkit honed through years of building and shipping web applications.
+                    Backend-first developer toolkit focused on building scalable, production-ready systems.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Languages -->
+
+                <!-- Backend & APIs (Primary) -->
                 <div
-                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover">
+                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover md:col-span-2">
                     <h3
-                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full zoom-hover">
-                        Languages</h3>
+                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full">
+                        Backend & APIs (Primary Focus)
+                    </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-javascript-plain colored"></i>
-                            JavaScript (ES6+)</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-typescript-plain colored"></i>
-                            TypeScript</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-html5-plain colored"></i>
-                            HTML5</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-css3-plain colored"></i>
-                            CSS3/SCSS</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-python"></i>
-                            Python</span>
-                        <!-- <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-            <i class="devicon-sqlite-plain colored"></i>
-          SQL</span> -->
+                        <span class="skill-pill"><i class="ci ci-python"></i> Python</span>
+                        <span class="skill-pill"><i class="ci ci-flask"></i> Flask</span>
+                        <span class="skill-pill"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                        <span class="skill-pill"><i class="ci ci-django"></i> Django</span>
+                        <span class="skill-pill"><i class="ci ci-nodejs"></i> Node.js</span>
+                        <span class="skill-pill"><i class="ci ci-expressjs"></i> Express</span>
                     </div>
                 </div>
 
@@ -490,75 +386,55 @@
                 <div
                     class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover">
                     <h3
-                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full zoom-hover">
-                        Frontend</h3>
+                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full">
+                        Frontend
+                    </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-react-original colored"></i>
-                            </i> React</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-nextjs"></i>
-                            Next.js</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="devicon-tailwindcss-original colored"></i>
-                            Tailwind CSS</span>
-                        <!-- <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">Redux</span> -->
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-
-                            <i class="devicon-bootstrap-plain colored"></i>
-                            Bootstrap</span>
+                        <span class="skill-pill"><i class="devicon-react-original colored"></i> React</span>
+                        <span class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                        <span class="skill-pill"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                        <span class="skill-pill"><i class="devicon-tailwindcss-original colored"></i> Tailwind
+                            CSS</span>
+                        <span class="skill-pill"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
+                        <span class="skill-pill"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                        <span class="skill-pill"><i class="devicon-css3-plain colored"></i> CSS3</span>
                     </div>
                 </div>
 
-                <!-- Backend -->
+                <!-- Databases, Realtime & Infrastructure -->
                 <div
                     class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover">
                     <h3
-                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full zoom-hover">
-                        Backend & Tools</h3>
+                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full">
+                        Databases, Realtime & Infrastructure
+                    </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-nodejs"></i> Node.js</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-expressjs"></i> Express</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-postgresql"></i> PostgreSQL</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-docker"></i> Docker</span>
+                        <span class="skill-pill"><i class="ci ci-postgresql"></i> PostgreSQL</span>
+                        <span class="skill-pill"><i class="ci ci-mongodb"></i> MongoDB</span>
+                        <span class="skill-pill"><i class="devicon-redis-plain colored"></i> Redis</span>
+                        <span class="skill-pill"><i class="ci ci-socketio"></i> Socket.IO</span>
+                        <span class="skill-pill"><i class="ci ci-docker"></i> Docker</span>
+                        <span class="skill-pill"><i class="devicon-linux-plain colored"></i> Linux</span>
                     </div>
                 </div>
 
-                <!-- Design -->
+                <!-- Tools -->
                 <div
-                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover">
+                    class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow zoom-hover md:col-span-2">
                     <h3
-                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full zoom-hover">
-                        Framework</h3>
+                        class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center before:content-[''] before:w-1.5 before:h-6 before:bg-primary-500 before:mr-3 before:rounded-full">
+                        Tools
+                    </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-django"></i> Django</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-
-                            <i class="devicon-fastapi-plain colored"></i>
-                            FastApi</span>
-                        <span
-                            class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 transition-colors cursor-default zoom-hover">
-                            <i class="ci ci-flask"></i> Flask</span>
+                        <span class="skill-pill"><i class="devicon-git-plain colored"></i> Git</span>
+                        <span class="skill-pill"><i class="devicon-github-original"></i> GitHub</span>
+                        <span class="skill-pill"><i class="devicon-vscode-plain colored"></i> VS Code</span>
                     </div>
                 </div>
+
             </div>
         </section>
+
 
         <!-- Projects Section -->
         <section id="projects" class="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto reveal">
@@ -585,6 +461,21 @@
                 <div
                     class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
                     <div class="h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden relative">
+
+                        <span class="absolute top-3 left-3 z-50
+                                bg-primary-500/90 text-white
+                                text-[11px] font-semibold tracking-wide
+                                px-3 py-1.5
+                                rounded-full
+                                shadow-lg shadow-primary-500/30
+                                ring-1 ring-white/40 dark:ring-slate-900/40
+                                backdrop-blur-sm">
+                            Progress
+                        </span>
+
+
+
+                        <!-- <p class="px-1 bg-yellow-100 text-yellow-400 absolute z-50 top-2 left-2 rounded-2xl">Beta<p> -->
                         <img src="./image/zepchat1.png" alt="CyberGuard Dashboard"
                             class="w-full h-full object-fill group-hover:scale-105 transition-transform duration-500">
                         <div
@@ -637,6 +528,32 @@
                 <div
                     class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
                     <div class="h-48 bg-slate-200 dark:bg-slate-700 overflow-hidden relative">
+
+                        <span class="absolute top-3 left-3 z-50
+                                bg-white/80 dark:bg-slate-900/70
+                                text-slate-800 dark:text-slate-200
+                                text-[11px] font-medium
+                                px-3 py-1.5
+                                rounded-full
+                                border border-slate-200/60 dark:border-slate-700/60
+                                shadow-sm
+                                backdrop-blur">
+                            Production Ready
+                        </span>
+
+                        <!-- <span class="absolute top-3 left-3 z-50
+                                bg-primary-500/90 text-white
+                                text-[11px] font-semibold uppercase tracking-wide
+                                px-3 py-1.5
+                                rounded-full
+                                shadow-lg shadow-primary-500/30
+                                ring-1 ring-white/40 dark:ring-slate-900/40
+                                backdrop-blur-sm">
+                            Production Ready
+                        </span> -->
+
+
+
                         <img src="./image/school.png" alt="EcoTrack Mobile"
                             class="w-full h-full object-fill group-hover:scale-105 transition-transform duration-500">
                         <div
