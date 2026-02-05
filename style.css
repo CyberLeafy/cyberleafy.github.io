@@ -77,7 +77,3 @@
 .bubble-shadow {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
-.thought-bubble {
-    animation: float 2.5s ease-in-out infinite;
-}
