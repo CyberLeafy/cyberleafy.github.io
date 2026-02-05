@@ -23,7 +23,8 @@ tailwind.config = {
                 'blob': 'blob 7s infinite',
                 'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                 'typing': 'typing 4s steps(14) infinite, blink .75s step-end infinite',
-                'thought-bubble': 'float 2.5s ease-in-out infinite'
+                'thought-bubble': 'float 2.5s ease-in-out infinite',
+                'thought-bubble-scale': 'float_scale 2.5s ease-in-out infinite'
             },
             keyframes: {
                 blob: {
@@ -50,6 +51,15 @@ tailwind.config = {
 
                     '50%': {
                         transform: 'translate(-4px, -2px)'
+                    }
+                },
+                float_scale: {
+                    '0%, 100%': {
+                        transform: 'scale(1)'
+                    },
+
+                    '50%': {
+                        transform: 'scale(1.1)'
                     }
                 }
             }

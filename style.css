@@ -81,14 +81,3 @@
 .thought-bubble {
     animation: float 2.5s ease-in-out infinite;
 }
-
-
-/* @keyframes float {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-} */
-
